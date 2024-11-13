@@ -62,12 +62,12 @@
             <artifactId>quarkus-jdbc-mysql</artifactId>
         </dependency>
 
+        <!--UTILS-->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-smallrye-openapi</artifactId>
         </dependency>
 
-        <!--UTILS-->
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>

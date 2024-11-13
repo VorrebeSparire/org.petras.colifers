@@ -10,12 +10,15 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.petras.colifers.util.error.ErrorResponse;
 import org.petras.colifers.util.error.MicroserviceException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Path("/api/v1")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @ApplicationScoped
 public class TestResource {
+    Logger logger = LoggerFactory.getLogger(getClass().getName());
 
     @GET
     @Path("/hello-world/{id}")
@@ -27,7 +30,7 @@ public class TestResource {
         if (id == 0) {
             throw new MicroserviceException("hello-world", "hello-world", 418);
         } else {
-            throw new RuntimeException("smth went wrong");
+            throw new IllegalArgumentException();
         }
     }
 }
